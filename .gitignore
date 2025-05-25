@@ -1,0 +1,53 @@
+# =============== #
+# Unity generated #
+# =============== #
+Library/
+Logs/
+Temp/
+Obj/
+UserSettings/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+UserSettings/
+
+# =============== #
+# Unity Packages  #
+# =============== #
+
+*.unitypackage
+
+# =============== #
+# OS generated    #
+# =============== #
+
+.DS_Store
+*.swp
+*.tmp
+
+# =============== #
+# Visual Studio   #
+# =============== #
+
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# =============== #
+# Package Cache   #
+# =============== #
+
+Packages/com.unity.*
+Library/PackageCache/
