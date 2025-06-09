@@ -5,8 +5,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public float spawnInterval = 3f;
     public int enemiesPerWave = 3;
-    public float minSpawnDistance = 5f;
-    public float maxSpawnDistance = 12f;
+    public float minSpawnDistance = 10f;
+    public float maxSpawnDistance = 18f;
 
     private float timer;
     private Transform player;
