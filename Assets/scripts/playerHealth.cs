@@ -43,5 +43,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Game Over!");
         Time.timeScale = 0f; // Pause the game
         gameOverPanel.SetActive(true);
+
+        ScoreManager.Instance.ResetScore();
     }
 }

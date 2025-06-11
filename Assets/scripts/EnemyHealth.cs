@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        ScoreManager.Instance.AddPoint(1);
         Destroy(gameObject); // O puedes jugar una animación de muerte primero
     }
 }

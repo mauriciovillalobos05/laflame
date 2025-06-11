@@ -8,12 +8,18 @@ public class PlayerMovement : MonoBehaviour
 
     private bool facingRight = true;
 
-    public Transform spriteTransform; // asigna aquí el hijo con el SpriteRenderer
-    public Transform firePoint;       // para rotarlo también si quieres
+    public Transform spriteTransform; // hijo con SpriteRenderer
+    public Transform firePoint;
+
+    public Sprite idleSprite;
+    public Sprite movingSprite;
+
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = spriteTransform.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -21,6 +27,17 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        // Cambiar sprite según movimiento
+        if (movement != Vector2.zero)
+        {
+            spriteRenderer.sprite = movingSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = idleSprite;
+        }
+
+        // Girar sprite si cambia de dirección
         if (movement.x > 0 && !facingRight)
         {
             Flip();
@@ -40,14 +57,12 @@ public class PlayerMovement : MonoBehaviour
     {
         facingRight = !facingRight;
 
-        // Invierte el sprite horizontalmente
+        // Voltear visualmente el sprite
         Vector3 scale = spriteTransform.localScale;
         scale.x *= -1;
         spriteTransform.localScale = scale;
 
-        // Opcional: también voltea el FirePoint
+        // Voltear también el punto de disparo
         firePoint.Rotate(0f, 180f, 0f);
-
-            
     }
 }
